@@ -60,7 +60,7 @@ screenshot_backend_shell_get_pixbuf (ScreenshotBackend *backend,
       method_params = g_variant_new ("(bbbs)",
                                      TRUE,
                                      screenshot_config->include_pointer,
-                                     TRUE, /* flash */
+                                     FALSE, /* flash */
                                      filename);
     }
   else if (rectangle != NULL)
@@ -69,7 +69,7 @@ screenshot_backend_shell_get_pixbuf (ScreenshotBackend *backend,
       method_params = g_variant_new ("(iiiibs)",
                                      rectangle->x, rectangle->y,
                                      rectangle->width, rectangle->height,
-                                     TRUE, /* flash */
+                                     FALSE, /* flash */
                                      filename);
     }
   else
@@ -77,7 +77,7 @@ screenshot_backend_shell_get_pixbuf (ScreenshotBackend *backend,
       method_name = "Screenshot";
       method_params = g_variant_new ("(bbs)",
                                      screenshot_config->include_pointer,
-                                     TRUE, /* flash */
+                                     FALSE, /* flash */
                                      filename);
     }
 
